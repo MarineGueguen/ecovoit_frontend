@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+@layer components {
+  .nav-link {
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-link::after {    
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: none repeat scroll 0 0 transparent;
+    background: #F5AC5B;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+  .nav-link:hover::after { 
+    width: 100%; 
+    left: 0; 
+  }
+  .nav-active::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      background-color: #F5AC5B;
+  }
+
+  .fontfam {
+    font-family: 'Fredoka One';
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+  
+  .container-size {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .input-form {
+    @apply py-2 border-b-2 border-custom-orange focus:border-custom-green-1 outline-none 
+  }
+
+  .selected-tab {
+    @apply pb-2 border-b-2 border-custom-orange
+  }
+}
